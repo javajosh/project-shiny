@@ -18,5 +18,9 @@ Starting with the original template, [these are the steps that I took to get the
 3. Where is mod.json documented?
 4. Where is the vertx version set?
 5. How do I add other dependencies to the build?
+6. How can I run an class that has a main() in it with gradle?
 
+###Apology
+
+Some of these questions are not vertx dependant - in fact many of them are gradle dependant, a build system with which I have a few hours of experience.
 
