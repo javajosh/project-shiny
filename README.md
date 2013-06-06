@@ -19,6 +19,12 @@ Starting with the original template, [these are the steps that I took to get the
 4. Where is the vertx version set?
 5. How do I add other dependencies to the build?
 6. How can I run an class that has a main() in it with gradle?
+7. Where do logs go?
+8. Why does RecordParser seem to want to throw an exception?
+
+##Closed questions
+
+1. How do you run a compiled groovy verticle? *Add `groovy:` to the mod.json*
 
 ###Apology
 
