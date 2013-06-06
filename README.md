@@ -1,12 +1,22 @@
-# Vert.x Gradle Template
+# Josh's Vert.x Gradle Template
 
-Template project for creating a Vert.x module with a Gradle build.
+This is an adaptation of the vertx gradle template using groovy as the primary language.
 
-Clone this and adapt it to easily develop Vert.x modules using Gradle as your build tool.
+Starting with the original template, [these are the steps that I took to get the project in this state](https://github.com/javajosh/vertx-gradle-template/commits/master) :
 
-By default this module contains a simple Java verticle which listens on the event bus and responds to `ping!`
-messages with `pong!`.
+1. Clone
+2. Remove unwanted files
+3. Rename package directories (this is more easily done outside of IDEA, alas)
+4. Add a groovy source directory and a groovy source file.
+5. Modify mod.json
+6. Run `gradle idea` to generate IDEA files - note that you must do this after you add groovy stuff.
 
-This template also shows you how to write tests in Java, Groovy, Ruby and Python
+##Open questions
 
-See the [build script](build.gradle) for the list of useful tasks
+1. Java source attaches nicely in IDEA - why isn't groovy source attaching?
+2. How do you spin up multiple verticles?
+3. Where is mod.json documented?
+4. Where is the vertx version set?
+5. How do I add other dependencies to the build?
+
+
