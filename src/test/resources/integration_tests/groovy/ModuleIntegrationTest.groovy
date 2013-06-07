@@ -12,10 +12,11 @@ def testConnect() {
   container.logger.info("in testPing()")
   println "vertx is ${vertx.getClass().getName()}"
   vertx.createNetClient().connect(12345, "localhost"){NetSocket socket ->
-    def parser = RecordParser.newDelimited("\n") { line ->
-      println "$line"
-    }
+//    def parser = RecordParser.newDelimited("\n") { line ->
+//      println "$line"
+//    }
     socket << "hello from the test"
+    testComplete()
   }
 }
 
