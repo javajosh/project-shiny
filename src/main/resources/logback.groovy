@@ -25,4 +25,4 @@ appender("FILE", FileAppender) {
   }
 }
 
-root(DEBUG, ["FILE", "CONSOLE"])
+root(INFO, ["FILE", "CONSOLE"])
