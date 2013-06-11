@@ -55,6 +55,8 @@ dependencies {
   provided "org.codehaus.groovy:groovy-all:$groovyVersion"
   provided "io.vertx:lang-groovy:$groovyLangModVersion@jar"
 
+  compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.13'
+
 }
 
 test {
