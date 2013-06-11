@@ -1,4 +1,4 @@
-package com.javajosh.hyena;
+package com.javajosh.shiny;
 
 import org.vertx.java.core.Handler;
 import org.vertx.java.core.eventbus.Message;
