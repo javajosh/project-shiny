@@ -1,4 +1,3 @@
-
 import org.vertx.groovy.core.net.NetSocket
 import org.vertx.groovy.core.parsetools.RecordParser
 
@@ -9,7 +8,7 @@ import org.vertx.groovy.testtools.VertxTests;
  * Just try to connect to the module.
  */
 def testConnect() {
-  container.logger.info("in testPing()")
+  container.logger.info("in testPing()") //TODO: figure out how to get the @Slf4J annotation to work in here. Inconsistency is bad, mkay?
   println "vertx is ${vertx.getClass().getName()}"
   vertx.createNetClient().connect(12345, "localhost"){asyncResult ->
     if (asyncResult.succeeded) {

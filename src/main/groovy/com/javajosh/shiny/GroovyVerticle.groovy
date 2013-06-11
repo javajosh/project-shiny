@@ -11,8 +11,7 @@ class GroovyVerticle extends Verticle{
   Object start(){
     vertx.createNetServer().connectHandler {NetSocket socket ->
       RecordParser parser = RecordParser.newDelimited("\n"){String payload ->
-        //println "$payload"
-        log.trace("Hello Logger")
+        log.trace("$payload")
       }
       socket.dataHandler (parser.toClosure())
     }.listen(12345)
