@@ -11,15 +11,16 @@ import org.vertx.groovy.testtools.VertxTests;
 def testConnect() {
   container.logger.info("in testPing()")
   println "vertx is ${vertx.getClass().getName()}"
-  vertx.createNetClient().connect(12345, "localhost"){NetSocket socket ->
-//    def parser = RecordParser.newDelimited("\n") { line ->
-//      println "$line"
-//    }
-    socket << "hello from the test"
-    testComplete()
+  vertx.createNetClient().connect(12345, "localhost"){asyncResult ->
+    if (asyncResult.succeeded) {
+      NetSocket socket = asyncResult.result
+      socket << "hello from the test"
+      testComplete()
+    }
   }
 }
 
+//DON'T EDIT THESE LINES
 VertxTests.initialize(this)
 container.deployModule(System.getProperty("vertx.modulename"), { asyncResult ->
   assertTrue(asyncResult.succeeded())
