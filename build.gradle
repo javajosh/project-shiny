@@ -56,6 +56,8 @@ dependencies {
   provided "io.vertx:lang-groovy:$groovyLangModVersion@jar"
 
   compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.13'
+  //This is used by logging for bytecode manip.
+  compile group: 'javassist', name: 'javassist', version: '3.12.1.GA'
 
 }
 
