@@ -1,4 +1,4 @@
-# Josh's Vert.x Gradle Template
+# Project Shiny
 
 This is an adaptation of the vertx gradle template using groovy as the primary language.
 
