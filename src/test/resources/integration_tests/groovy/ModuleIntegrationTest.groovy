@@ -13,7 +13,7 @@ def testConnect() {
   vertx.createNetClient().connect(12345, "localhost"){asyncResult ->
     if (asyncResult.succeeded) {
       NetSocket socket = asyncResult.result
-      socket << "hello from the test"
+      socket << "hello from the test\n"
       testComplete()
     }
   }
