@@ -5,16 +5,18 @@ import static org.vertx.testtools.VertxAssert.*
 import org.vertx.groovy.testtools.VertxTests;
 
 /**
- * Just try to connect to the module.
+ * Just try to connect to the module and say "hello from test".
  */
 def testConnect() {
-  container.logger.info("in testPing()") //TODO: figure out how to get the @Slf4J annotation to work in here. Inconsistency is bad, mkay?
-  println "vertx is ${vertx.getClass().getName()}"
+  container.logger.info("in testConnect()") //TODO: replace container.logger with @Slf4J annotation
   vertx.createNetClient().connect(12345, "localhost"){asyncResult ->
     if (asyncResult.succeeded) {
       NetSocket socket = asyncResult.result
       socket << "hello from the test\n"
+      socket.close()
       testComplete()
+    } else {
+      fail("Unable to connect to verticle.")
     }
   }
 }
