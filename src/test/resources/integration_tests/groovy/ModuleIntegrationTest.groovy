@@ -15,7 +15,7 @@ def testConnect() {
       //container.logger.info("testConnect() succeeded in connecting to ${System.getProperty("vertx.modulename")} on port ${GroovyVerticle.PORT}")
       NetSocket socket = asyncResult.result
       //We can attach a listener to the socket hear to see if it responds with anything.
-      socket << "hello from the test\n"
+      socket << ("hello from the test" + GroovyVerticle.DELIMITER)
       socket.close()
       //container.logger.info("testConnect() disconnected from socket")
       testComplete()

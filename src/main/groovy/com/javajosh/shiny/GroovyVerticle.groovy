@@ -10,10 +10,10 @@ import org.vertx.groovy.platform.Verticle
 @Slf4j
 class GroovyVerticle extends Verticle{
   public static int PORT = 12345
-
+  public static String DELIMITER = "\n"
   @Override
   Object start(){
-    RecordParser parser = RecordParser.newDelimited("\n"){Buffer buffer ->
+    RecordParser parser = RecordParser.newDelimited(DELIMITER){Buffer buffer ->
       String payload = buffer.toString().trim()
       log.info("GroovyVerticle recieved delimited $payload")
     }
