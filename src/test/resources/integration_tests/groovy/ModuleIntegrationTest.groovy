@@ -1,3 +1,4 @@
+import com.javajosh.shiny.GroovyVerticle
 import org.vertx.groovy.core.net.NetSocket
 import org.vertx.groovy.core.parsetools.RecordParser
 
@@ -8,12 +9,15 @@ import org.vertx.groovy.testtools.VertxTests;
  * Just try to connect to the module and say "hello from test".
  */
 def testConnect() {
-  container.logger.info("in testConnect()") //TODO: replace container.logger with @Slf4J annotation
-  vertx.createNetClient().connect(12345, "localhost"){asyncResult ->
+   //TODO: replace container.logger with @Slf4J annotation
+  vertx.createNetClient().connect(GroovyVerticle.PORT, "localhost"){asyncResult ->
     if (asyncResult.succeeded) {
+      //container.logger.info("testConnect() succeeded in connecting to ${System.getProperty("vertx.modulename")} on port ${GroovyVerticle.PORT}")
       NetSocket socket = asyncResult.result
+      //We can attach a listener to the socket hear to see if it responds with anything.
       socket << "hello from the test\n"
       socket.close()
+      //container.logger.info("testConnect() disconnected from socket")
       testComplete()
     } else {
       fail("Unable to connect to verticle.")
