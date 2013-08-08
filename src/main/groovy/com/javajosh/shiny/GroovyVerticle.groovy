@@ -21,11 +21,10 @@ class GroovyVerticle extends Verticle{
 
     vertx.createNetServer().connectHandler {NetSocket socket ->
       log.info("socket open : ${socket.writeHandlerID}")
-      socket.closeHandler {
-        log.info("socket close: ${socket.writeHandlerID}")
-      }
-      socket.dataHandler (parser.toClosure())
-    }.listen(12345)
+
+      socket.dataHandler parser.toClosure()
+      socket.closeHandler { log.info("socket close: ${socket.writeHandlerID}")}
+    }.listen(PORT)
     log.info("listening on port $PORT")
   }
 }
